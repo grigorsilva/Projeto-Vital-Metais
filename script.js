@@ -22,27 +22,45 @@ function initDots() {
 }
 
 function goSlide(n) {
-  const prev = document.getElementById('sl-' + curSlide);
-  const next = document.getElementById('sl-' + n);
+  // 1. Limpa TODOS os slides primeiro (Garante que nenhum fica encravado na frente)
+  for (let i = 1; i <= TOTAL_SLIDES; i++) {
+    const slide = document.getElementById('sl-' + i);
+    if (slide) {
+      slide.classList.remove('active');
+    }
+  }
+  
+  // Limpa também todas as bolinhas
   const dotsEl = document.getElementById('dots');
-  if (!prev || !next) return;
-  prev.classList.remove('active');
-  if (dotsEl && dotsEl.children[curSlide - 1]) dotsEl.children[curSlide - 1].classList.remove('active');
+  if (dotsEl) {
+    Array.from(dotsEl.children).forEach(dot => dot.classList.remove('active'));
+  }
+
+  // 2. Atualiza o número do slide atual
   curSlide = n;
-  next.classList.add('active');
-  if (dotsEl && dotsEl.children[curSlide - 1]) dotsEl.children[curSlide - 1].classList.add('active');
-  const snumEl = document.getElementById('snum');
-  if (snumEl) snumEl.textContent = curSlide;
-  const btnPrev = document.getElementById('btnPrev');
-  const btnNext = document.getElementById('btnNext');
-  if (btnPrev) btnPrev.disabled = curSlide === 1;
-  if (btnNext) btnNext.disabled = curSlide === TOTAL_SLIDES;
-  const pg = document.getElementById('page-empresa');
-  if (pg) pg.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // 3. Ativa EXATAMENTE o slide pedido e traz para a frente
+  const nextSlide = document.getElementById('sl-' + curSlide);
+  if (nextSlide) {
+    nextSlide.classList.add('active');
+  }
+
+  // 4. Pinta a bolinha correta
+  if (dotsEl && dotsEl.children[curSlide - 1]) {
+    dotsEl.children[curSlide - 1].classList.add('active');
+  }
+
+  // 5. Bloqueia/Desbloqueia os botões Anterior e Próximo
+  const btnP = document.getElementById('btnPrev');
+  const btnN = document.getElementById('btnNext');
+  if (btnP) btnP.disabled = (curSlide === 1);
+  if (btnN) btnN.disabled = (curSlide === TOTAL_SLIDES);
 }
 
 function nextSlide() { if (curSlide < TOTAL_SLIDES) goSlide(curSlide + 1); }
 function prevSlide() { if (curSlide > 1) goSlide(curSlide - 1); }
+
+
 
 /* ══════════════════════════════
    PAGE TRANSITION
@@ -315,3 +333,5 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   
 });
+
+/* ── MODO ESCURO / CLARO (THEME TOGGLE) ── */
