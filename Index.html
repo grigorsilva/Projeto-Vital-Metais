@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vital Metais — Metais Não Ferrosos</title>
+  <meta name="description" content="Fundada em 1998, a Vital Metais oferece reciclagem e comércio de metais não ferrosos com soluções sustentáveis e logística eficiente.">
+  <link rel="canonical" href="https://vitalmetais.com.br/">
+  <link rel="icon" href="img/logo/icon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.core.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/glide.min.js"></script>
+</head>
+<body id="top">
+
+<!-- ════════════════════════════════════════════
+     PÁGINA PRINCIPAL
+════════════════════════════════════════════ -->
+<div id="page-main">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="tb-left">
+      <a href="https://www.facebook.com/vitalmetais/" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+      <a href="https://www.instagram.com/vitalmetais/" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    </div>
+    <div class="tb-right">
+      <a href="mailto:comercial@vitalmetais.com.br">
+        <i class="fas fa-envelope"></i> comercial@vitalmetais.com.br
+      </a>
+      <a href="tel:551141462057">
+        <i class="fas fa-phone"></i> (11) 4146-2057
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=5511977164468" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> (11) 97716-4468
+      </a>
+    </div>
+  </div>
+
+  <!-- NAV
+       Logo: coloque o arquivo em img/logo/logo.png
+       Tamanho ideal: altura 44px, fundo transparente (PNG)
+  -->
+  <nav>
+    <a href="#" class="nav-logo-link">
+      <img
+        src="img logo/logovital.jpg"
+        alt="Vital Metais"
+        class="nav-logo-img"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="logo-txt" style="display:none">Vital<span>Metais</span></div>
+    </a>
+    
+    <button class="menu-toggle" aria-label="Abrir menu">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="nav-links main-nav">
+      <a href="#top">inicio</a>
+      <a href="#exportacao">Exportação</a>
+      <a href="#sobre">Empresa</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#logistica">Log. Reversa</a>
+      <a href="#atuacao">Atuação</a>
+      <a href="#lme" class="nav-lme"><i class="fas fa-chart-line"></i> Mercado LME</a>
+      <a href="#contato">Contato</a>
+      <a href="https://api.whatsapp.com/send?phone=551141462057&text=Ol%C3%A1%2C+vim+pelo+site.+Gostaria+de+agendar+uma+coleta"
+         target="_blank" rel="noopener noreferrer" class="btn-green">
+        Agendar Coleta
+      </a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <video autoplay loop muted playsinline class="hero-video">
+      <source src="Videos/fundoo.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+      <div class="hero-badge">Fundada em 1998 · São Paulo - SP</div>
+      <h1>Compra e Venda de<br><span>Sucatas Metálicas</span></h1>
+      <p>Sucatas ferrosas e não ferrosas, oferecendo soluções completas para indústrias, comércios e cooperativas. Pagamento justo, coleta rápida e regularização ambiental garantida.</p>
+      <div class="hero-btns">
+        <a href="#contato" class="btn-ghost">Fale Conosco</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span>27+</span><p>Anos de Mercado</p></div>
+        <div class="hero-stat"><span>500+</span><p>Clientes Ativos</p></div>
+        <div class="hero-stat"><span>2</span><p>Unidades SP</p></div>
+        <div class="hero-stat"><span>1</span><p>Unidades RJ</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SOBRE NÓS ──
+       Carrossel: adicione fotos em img/sobre/foto1.jpg, foto2.jpg, foto3.jpg, foto4.jpg
+  -->
+  <section class="sec about" id="sobre">
+    <div class="about-grid">
+
+      <div class="about-carousel" id="aboutCarousel">
+        <div class="ac-track" id="acTrack">
+          <div class="ac-slide"><img src="img logo/frentevital.jpeg" alt="Vital Metais - Estrutura"></div>
+          <div class="ac-slide"><img src="Img geral/empresa.jpeg" alt="Vital Metais - Operação"></div>
+          <div class="ac-slide"><img src="Img geral/empresa.jpeg" alt="Vital Metais - Equipe"></div>
+          <div class="ac-slide"><img src="img logo/frentevital.jpeg" alt="Vital Metais - Instalações"></div>
+        </div>
+        <button class="ac-btn ac-prev" onclick="acMove(-1)" aria-label="Anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="ac-btn ac-next" onclick="acMove(1)" aria-label="Próximo">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="ac-dots" id="acDots"></div>
+      </div>
+
+      <div>
+        <div class="sec-tag">Sobre nós</div>
+        <h2 class="ttl">Vital Metais</h2>
+        <p>Com sólida experiência no mercado desde 1998, a Vital Metais atua na compra, venda e reciclagem de metais ferrosos e não ferrosos, oferecendo soluções eficientes e ambientalmente responsáveis para empresas dos mais diversos segmentos.</p>
+        <p>Somos especialistas em logística reversa, destinação correta de resíduos e reaproveitamento de materiais como alumínio, cobre, bronze, aço e ferro. Nosso foco está em gerar valor para nossos clientes por meio de práticas que respeitam as normas técnicas e a legislação ambiental vigente.</p>
+        <p>Atendemos com agilidade empresas industriais, comércios, construtoras, cooperativas e centros de distribuição, sempre com compromisso técnico, ética e responsabilidade socioambiental.</p>
+        <button class="btn-outline" onclick="abrirEmpresa()">
+          <i class="fas fa-angles-right"></i> Saiba Mais
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PRODUTOS ── -->
+  <section class="sec" id="produtos" style="background:#000;padding:80px 0;">
+  <div style="margin:0 5% 40px;">
+    <div class="sec-tag" style="color:var(--gl);">Produtos</div>
+    <h2 class="ttl" style="color:#fff;">Comercialização de Metais Não Ferrosos</h2>
+    <p class="sec-desc" style="color:#888;">Soluções completas com qualidade, procedência garantida e conformidade ambiental.</p>
+  </div>
+
+  <div class="glide" id="glide-produtos">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+
+        <li class="glide__slide">
+          <a href="#contato" class="m-cover">
+            <div class="cover__image-wrapper">
+              <img src="Img geral/alumn.jpeg" alt="Sucata de Alumínio" class="cover__img">
+            </div>
+            <div class="cover__description">
+              <div class="cover__issue">Sucata de Alumínio</div>
+              <div class="cover__bottom-part">
+                <div class="cover__title"><p>Perfis, chaparias e sucata de alumínio de origens industriais diversas.</p></div>
+                <div class="cover__more">Cotar material <i class="fas fa-arrow-right"></i></div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="glide__slide">
+          <a href="#contato" class="m-cover">
+            <div class="cover__image-wrapper">
+              <img src="Img geral/cobre.jpg" alt="Sucata de Cobre" class="cover__img">
+            </div>
+            <div class="cover__description">
+              <div class="cover__issue">Sucata de Cobre</div>
+              <div class="cover__bottom-part">
+                <div class="cover__title"><p>Fios, cabos e peças de cobre com procedência rastreável.</p></div>
+                <div class="cover__more">Cotar material <i class="fas fa-arrow-right"></i></div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="glide__slide">
+          <a href="#contato" class="m-cover">
+            <div class="cover__image-wrapper">
+              <img src="Img geral/Metal.jpg" alt="Sucata de Metal" class="cover__img">
+            </div>
+            <div class="cover__description">
+              <div class="cover__issue">Sucata de Metal</div>
+              <div class="cover__bottom-part">
+                <div class="cover__title"><p>Amplo portfólio para necessidades industriais variadas.</p></div>
+                <div class="cover__more">Cotar material <i class="fas fa-arrow-right"></i></div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="glide__slide">
+          <a href="#contato" class="m-cover">
+            <div class="cover__image-wrapper">
+              <img src="Img geral/bronze.jpg" alt="Sucata de Bronze" class="cover__img">
+            </div>
+            <div class="cover__description">
+              <div class="cover__issue">Sucata de Bronze</div>
+              <div class="cover__bottom-part">
+                <div class="cover__title"><p>Mancais, buchas, engrenagens e peças usinadas de bronze.</p></div>
+                <div class="cover__more">Cotar material <i class="fas fa-arrow-right"></i></div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="glide__slide">
+          <a href="#contato" class="m-cover">
+            <div class="cover__image-wrapper">
+              <img src="Img geral/inoxid.jpeg" alt="Sucata de Inoxidável" class="cover__img">
+            </div>
+            <div class="cover__description">
+              <div class="cover__issue">Sucata Inoxidável</div>
+              <div class="cover__bottom-part">
+                <div class="cover__title"><p>Aços inoxidáveis de diferentes graus com certificação.</p></div>
+                <div class="cover__more">Cotar material <i class="fas fa-arrow-right"></i></div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="glide__slide">
+          <a href="#contato" class="m-cover">
+            <div class="cover__image-wrapper">
+              <img src="Img geral/ferro.jpeg" alt="Sucata de Ferro" class="cover__img">
+            </div>
+            <div class="cover__description">
+              <div class="cover__issue">Sucata de Ferro</div>
+              <div class="cover__bottom-part">
+                <div class="cover__title"><p>Ferro velho e estruturas com destinação ambiental correta.</p></div>
+                <div class="cover__more">Cotar material <i class="fas fa-arrow-right"></i></div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="glide__slide">
+          <a href="#contato" class="m-cover">
+            <div class="cover__image-wrapper">
+              <img src="Img geral/porto2.jpg" alt="Sucata Reversa" class="cover__img">
+            </div>
+            <div class="cover__description">
+              <div class="cover__issue">Sucata Reversa</div>
+              <div class="cover__bottom-part">
+                <div class="cover__title"><p>Materiais de logística reversa com documentação completa.</p></div>
+                <div class="cover__more">Cotar material <i class="fas fa-arrow-right"></i></div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="glide__slide">
+          <a href="#contato" class="m-cover">
+            <div class="cover__image-wrapper">
+              <img src="Img geral/latapren.jpeg" alt="Outros Metais" class="cover__img">
+            </div>
+            <div class="cover__description">
+              <div class="cover__issue">Outros Metais</div>
+              <div class="cover__bottom-part">
+                <div class="cover__title"><p>Zinco, estanho, níquel e outras ligas especiais.</p></div>
+                <div class="cover__more">Cotar material <i class="fas fa-arrow-right"></i></div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="sec" id="exportacao" style="background: #0a0a0a; padding: 100px 5%;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    
+    <div class="export-flex">
+      
+      <div class="export-media">
+        <div class="export-img-wrapper">
+          <img src="Img geral/porto2.jpg" alt="Exportação Vital Metais" class="export-img-main">
+          <div class="export-badge-img">
+            <i class="fas fa-ship"></i>
+            <span>Global Logistics</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="export-text">
+        <div class="sec-tag" style="color:var(--gl);">Presença Global</div>
+        <h2 class="ttl" style="color:var(--white); margin-bottom: 20px;">Exportação Internacional</h2>
+        <p class="sec-desc" style="color:#888; margin-bottom: 40px; text-align: left; margin-left: 0;">
+          A Vital Metais opera no mercado mundial com excelência em logística aduaneira. Preparamos e exportamos sucatas de metais não ferrosos seguindo os mais rigorosos padrões internacionais.
+        </p>
+
+        <div class="export-mini-grid">
+          <div class="export-item">
+            <i class="fas fa-globe"></i>
+            <div>
+              <h4>Mercados</h4>
+              <p>Ásia, Europa e Américas.</p>
+            </div>
+          </div>
+          <div class="export-item">
+            <i class="fas fa-box-open"></i>
+            <div>
+              <h4>Estufagem</h4>
+              <p>Otimização de carga em contentores.</p>
+            </div>
+          </div>
+          <div class="export-item">
+            <i class="fas fa-file-shield"></i>
+            <div>
+              <h4>Documentação</h4>
+              <p>Despacho e laudos de pureza (ISRI).</p>
+            </div>
+          </div>
+          <div class="export-item">
+            <i class="fas fa-check-double"></i>
+            <div>
+              <h4>Qualidade</h4>
+              <p>Metais processados para fundição global.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+  <!-- ── Videos Operação ──
+-->
+
+
+
+</video>
+<section class="sec" id="videos" style="background: var(--b2); padding: 80px 5%;">
+  <div class="container">
+    <div class="sec-tag" style="color:var(--gl);">Nossa Operação</div>
+    <h2 class="ttl" style="color:var(--white);">A Vital em Ação</h2>
+    <p class="sec-desc" style="color:#888; margin-bottom: 40px;">Acompanhe o rigor técnico e a infraestrutura por trás do processamento dos nossos metais.</p>
+    
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="Videos/gif.fundo.mp4" title="Processamento de Cobre" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3>Triagem e Processamento</h3>
+          <p>Veja como garantimos a pureza e o valor máximo dos materiais na nossa matriz.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="Videos/prensa.mp4" title="Logística e Frota" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3>Logística e Frota Própria</h3>
+          <p>Agilidade e segurança na recolha com camiões equipados e regularizados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+  <!-- ── ÁREAS DE ATUAÇÃO ── -->
+  <section class="sec" id="atuacao" style="background: #0a0a0a; padding: 80px 5%;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
+    <div class="sec-tag" style="color:var(--gl);">Mercados</div>
+    <h2 class="ttl" style="color:var(--white); margin-bottom: 50px;">Áreas de Atuação</h2>
+    
+    <div class="atu-grid">
+      <div class="atu-card">
+        <span class="ic"><i class="fas fa-industry"></i></span>
+        <span>Industrial</span>
+      </div>
+      <div class="atu-card">
+        <span class="ic"><i class="fas fa-tower-broadcast"></i></span>
+        <span>Telecomunicações</span>
+      </div>
+      <div class="atu-card">
+        <span class="ic"><i class="fas fa-recycle"></i></span>
+        <span>Reciclagem</span>
+      </div>
+      <div class="atu-card">
+        <span class="ic"><i class="fas fa-bolt"></i></span>
+        <span>Elétrico</span>
+      </div>
+      <div class="atu-card">
+        <span class="ic"><i class="fas fa-droplet"></i></span>
+        <span>Saneamento</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ── CERTIFICAÇÕES ──
+       Logos: img/certs/iso14001.png | iso9001.png | bir.png | alc.png
+  -->
+  <section class="sec certs" id="certificacoes">
+    <div class="sec-tag">Qualidade & Conformidade</div>
+    <h2 class="ttl">Nossas Certificações</h2>
+    <p class="certs-sub">Reconhecimentos que comprovam nosso compromisso com qualidade, meio ambiente e boas práticas industriais.</p>
+    <div class="certs-track-wrap">
+      <div class="certs-track">
+        <!-- Set 1 -->
+        <div class="cert-item iso14" onclick="toggleCert(this)">
+          <img class="cert-logo" src="img logo/14001.png" alt="ISO 14001:2015">
+          <div class="cert-name">ISO 14001:2015<br>Gestão Ambiental</div>
+          <div class="cert-detail">Certificado ALC</div>
+        </div>
+        <div class="cert-item iso9" onclick="toggleCert(this)">
+          <img class="cert-logo" src="img logo/9001.jpeg" alt="ISO 9001:2015">
+          <div class="cert-name">ISO 9001:2015<br>Gestão da Qualidade</div>
+          <div class="cert-detail">Certificado ALC</div>
+        </div>
+        <div class="cert-item bir" onclick="toggleCert(this)">
+          <img class="cert-logo" src="Img geral/birrr.jpeg" alt="BIR Member">
+          <div class="cert-name">BIR Member<br>Int'l Recycling</div>
+          <div class="cert-detail">Membro Oficial</div>
+        </div>
+        <div class="cert-item alc" onclick="toggleCert(this)">
+          <img class="cert-logo" src="img logo/14001.png" alt="ALC Certificações">
+          <div class="cert-name">America Latina<br>Certificações</div>
+          <div class="cert-detail">Organismo Acreditado</div>
+        </div>
+        <!-- Set 2 — clone para loop infinito -->
+        <div class="cert-item iso14" onclick="toggleCert(this)">
+          <img class="cert-logo" src="img logo/14001.png" alt="ISO 14001:2015">
+          <div class="cert-name">ISO 14001:2015<br>Gestão Ambiental</div>
+          <div class="cert-detail">Certificado ALC</div>
+        </div>
+        <div class="cert-item iso9" onclick="toggleCert(this)">
+          <img class="cert-logo" src="img logo/9001.jpeg" alt="ISO 9001:2015">
+          <div class="cert-name">ISO 9001:2015<br>Gestão da Qualidade</div>
+          <div class="cert-detail">Certificado ALC</div>
+        </div>
+        <div class="cert-item bir" onclick="toggleCert(this)">
+          <img class="cert-logo" src="Img geral/birrr.jpeg" alt="BIR Member">
+          <div class="cert-name">BIR Member<br>Int'l Recycling</div>
+          <div class="cert-detail">Membro Oficial</div>
+        </div>
+        <div class="cert-item alc" onclick="toggleCert(this)">
+          <img class="cert-logo" src="img logo/14001.png" alt="ALC Certificações">
+          <div class="cert-name">America Latina<br>Certificações</div>
+          <div class="cert-detail">Organismo Acreditado</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MERCADO LME ── -->
+  <section class="sec lme-sec" id="lme">
+    <div class="sec-tag" style="color:var(--gl);">Cotações em Tempo Real</div>
+    <h2 class="ttl" style="color:var(--white);">Mercado LME</h2>
+    <p class="sec-desc" style="color:#888;margin-bottom:40px;">
+      Preços de referência da London Metal Exchange. Base para pagamento justo na compra de sucatas.
+    </p>
+    <div class="lme-grid">
+      <div class="lme-card" id="lc-al">
+        <div class="lme-sym">Al</div>
+        <div class="lme-metal-name">Alumínio</div>
+        <div class="lme-val" id="lv-al"><i class="fas fa-spinner fa-spin"></i></div>
+        <div class="lme-unit">USD / t</div>
+        <div class="lme-chg" id="lchg-al"></div>
+      </div>
+      <div class="lme-card" id="lc-cu">
+        <div class="lme-sym">Cu</div>
+        <div class="lme-metal-name">Cobre</div>
+        <div class="lme-val" id="lv-cu"><i class="fas fa-spinner fa-spin"></i></div>
+        <div class="lme-unit">USD / t</div>
+        <div class="lme-chg" id="lchg-cu"></div>
+      </div>
+      <div class="lme-card" id="lc-pb">
+        <div class="lme-sym">Pb</div>
+        <div class="lme-metal-name">Chumbo</div>
+        <div class="lme-val" id="lv-pb"><i class="fas fa-spinner fa-spin"></i></div>
+        <div class="lme-unit">USD / t</div>
+        <div class="lme-chg" id="lchg-pb"></div>
+      </div>
+      <div class="lme-card" id="lc-zn">
+        <div class="lme-sym">Zn</div>
+        <div class="lme-metal-name">Zinco</div>
+        <div class="lme-val" id="lv-zn"><i class="fas fa-spinner fa-spin"></i></div>
+        <div class="lme-unit">USD / t</div>
+        <div class="lme-chg" id="lchg-zn"></div>
+      </div>
+      <div class="lme-card" id="lc-sn">
+        <div class="lme-sym">Sn</div>
+        <div class="lme-metal-name">Estanho</div>
+        <div class="lme-val" id="lv-sn"><i class="fas fa-spinner fa-spin"></i></div>
+        <div class="lme-unit">USD / t</div>
+        <div class="lme-chg" id="lchg-sn"></div>
+      </div>
+      <div class="lme-card" id="lc-ni">
+        <div class="lme-sym">Ni</div>
+        <div class="lme-metal-name">Níquel</div>
+        <div class="lme-val" id="lv-ni"><i class="fas fa-spinner fa-spin"></i></div>
+        <div class="lme-unit">USD / t</div>
+        <div class="lme-chg" id="lchg-ni"></div>
+      </div>
+      <div class="lme-card lme-usd" id="lc-usd">
+        <div class="lme-sym">$</div>
+        <div class="lme-metal-name">Dólar</div>
+        <div class="lme-val" id="lv-usd"><i class="fas fa-spinner fa-spin"></i></div>
+        <div class="lme-unit">BRL</div>
+        <div class="lme-chg" id="lchg-usd"></div>
+      </div>
+    </div>
+    <p class="lme-note">
+      <i class="fas fa-circle-info"></i>
+      Cotações via <strong>Yahoo Finance</strong> — valores em USD por tonelada métrica.
+      &nbsp;|&nbsp; <span id="lme-timestamp" style="color:#666;">Carregando...</span>
+      &nbsp;|&nbsp;
+      <a href="https://finance.yahoo.com/commodities" target="_blank" rel="noopener noreferrer"
+         style="color:var(--gl);text-decoration:none;font-weight:600;">
+        Ver no Yahoo Finance <i class="fas fa-arrow-up-right-from-square" style="font-size:10px;"></i>
+      </a>
+    </p>
+  </section>
+
+  <!-- ── LOGÍSTICA REVERSA ──
+       
+  -->
+  <section class="sec" id="logistica">
+    <div class="log-grid">
+      <div class="log-img-wrap">
+        <img src="Img geral/logistica.jpg" alt="Logística Reversa Vital Metais"
+             onerror="this.parentElement.classList.add('log-no-img');this.style.display='none'">
+      </div>
+      <div>
+        <div class="sec-tag">Logística</div>
+        <h2 class="ttl">Logística Reversa</h2>
+        <p style="font-size:15px;color:var(--tm);line-height:1.8;margin-bottom:4px;">
+          A Vital Metais oferece serviços completos de logística reversa de metais, contribuindo para a redução de impactos ambientais, a conformidade legal e a valorização da imagem corporativa.
+        </p>
+        <div class="tabs-wrap">
+          <div class="tab-btns">
+            <button class="tbtn active" onclick="st(0,this)">Redução de custos</button>
+            <button class="tbtn" onclick="st(1,this)">Marketing positivo</button>
+            <button class="tbtn" onclick="st(2,this)">Economia de recursos</button>
+            <button class="tbtn" onclick="st(3,this)">Melhoria dos produtos</button>
+          </div>
+          <div id="tcs">
+            <div class="tc active">
+              <div class="tc-icon"><i class="fas fa-coins"></i></div>
+              <div>
+                <h3>Redução de custos</h3>
+                <p>Transforme resíduos em matéria-prima ou receita, eliminando custos com armazenagem de resíduos.</p>
+              </div>
+            </div>
+            <div class="tc">
+              <div class="tc-icon"><i class="fas fa-bullhorn"></i></div>
+              <div>
+                <h3>Marketing positivo</h3>
+                <p>Empresas sustentáveis fortalecem sua imagem junto a clientes, investidores e parceiros.</p>
+              </div>
+            </div>
+            <div class="tc">
+              <div class="tc-icon"><i class="fas fa-leaf"></i></div>
+              <div>
+                <h3>Economia de recursos</h3>
+                <p>Reutilização de materiais contribui para a eficiência energética, reduzindo dependência de matérias-primas virgens.</p>
+              </div>
+            </div>
+            <div class="tc">
+              <div class="tc-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+              <div>
+                <h3>Melhoria dos produtos</h3>
+                <p>Acompanhe o ciclo de vida dos materiais promovendo inovações sustentáveis e melhorias contínuas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DEPOIMENTOS ── -->
+  <section class="sec" style="background:var(--black);">
+    <div class="sec-tag" style="color:var(--gl);">Avaliações Google</div>
+    <h2 class="ttl" style="color:var(--white);">Nossos Depoimentos</h2>
+    <div class="dep-grid">
+      <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <p>A Vital Metais é um dos nossos principais parceiros. Compromisso, transparência e flexibilidade são os adjetivos que mais se destacam. A qualidade de uma empresa é definida pelo time que a compõe.</p>
+        <div class="dep-author">
+          <div class="avatar">CR</div>
+          <div><div class="dep-name">Celso Ricardo</div></div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <p>Empresa excelente, funcionários prestativos, pagamento no mesmo dia, todo suporte que você precisar eles vão te ajudar, podem vir sem medo.</p>
+        <div class="dep-author">
+          <div class="avatar">GB</div>
+          <div><div class="dep-name">Gilberto Borges</div></div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <p>Excelente atendimento, pessoal muito atencioso e preços surpreendentes.</p>
+        <div class="dep-author">
+          <div class="avatar">RC</div>
+          <div><div class="dep-name">Rômulo Camargo</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="https://www.google.com/search?q=Vital+Metais+Reciclagem+Avalia%C3%A7%C3%B5es"
+         target="_blank" rel="noopener noreferrer"
+         class="btn-hero" style="display:inline-block;">
+        Faça sua avaliação
+      </a>
+    </div>
+  </section>
+
+  <!-- ── CTA STRIP ── -->
+  <div class="cta-strip">
+    <div>
+      <h2>Fale Conosco</h2>
+      <p>Estamos sempre prontos para melhor atendê-los.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="mailto:comercial@vitalmetais.com.br" class="btn-white">
+        <i class="fas fa-envelope"></i> E-mail
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=5511977164468" target="_blank" rel="noopener noreferrer" class="btn-dark">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- ── CONTATO ── -->
+  <section class="sec" id="contato" style="background:var(--gbg);">
+    <div class="sec-tag">Fale conosco</div>
+    <h2 class="ttl" style="margin-bottom:40px;">Entre em Contato</h2>
+    <div class="ct-grid">
+      <div>
+        <div class="ct-item">
+          <div class="ct-ico"><i class="fas fa-map-location-dot"></i></div>
+          <div>
+            <div class="ct-lbl">Matriz</div>
+            <div class="ct-val">Alameda Caiapós, 680 — Tamboré, Barueri - SP</div>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-ico"><i class="fas fa-map-location-dot"></i></div>
+          <div>
+            <div class="ct-lbl">Filial</div>
+            <div class="ct-val">Rua dos Sentinelas, 180 — Carapicuíba - SP</div>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-ico"><i class="fas fa-phone"></i></div>
+          <div>
+            <div class="ct-lbl">Telefone</div>
+            <div class="ct-val"><a href="tel:551141462057">(11) 4146-2057</a></div>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-ico"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <div class="ct-lbl">WhatsApp</div>
+            <div class="ct-val">
+              <a href="https://api.whatsapp.com/send?phone=5511977164468" target="_blank">(11) 97716-4468</a><br>
+              <a href="https://api.whatsapp.com/send?phone=5511993950942" target="_blank">(11) 99395-0942</a>
+            </div>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-ico"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="ct-lbl">E-mail</div>
+            <div class="ct-val"><a href="mailto:comercial@vitalmetais.com.br">comercial@vitalmetais.com.br</a></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="fr">
+          <div class="ff"><label>Nome</label><input type="text" id="fn" placeholder="Seu nome"></div>
+          <div class="ff"><label>Empresa</label><input type="text" id="fe" placeholder="Razão social"></div>
+        </div>
+        <div class="fr">
+          <div class="ff"><label>E-mail</label><input type="email" id="fem" placeholder="email@empresa.com.br"></div>
+          <div class="ff"><label>Telefone</label><input type="tel" id="ft" placeholder="(11) 9xxxx-xxxx"></div>
+        </div>
+        <div class="ff">
+          <label>Material de Interesse</label>
+          <select id="fm">
+            <option value="" disabled selected>Selecione o material</option>
+            <option>Sucata de Alumínio</option>
+            <option>Sucata de Cobre</option>
+            <option>Sucata de Bronze</option>
+            <option>Sucata de Ferro</option>
+            <option>Sucata de Inoxidável</option>
+            <option>Logística Reversa</option>
+            <option>Outros</option>
+          </select>
+        </div>
+        <div class="ff">
+          <label>Mensagem</label>
+          <textarea id="fmsg" placeholder="Descreva sua necessidade, quantidade, prazo..."></textarea>
+        </div>
+        <button class="btn-sub" onclick="submitForm()">Enviar Mensagem</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="ft">
+      <div>
+        <div class="ft-logo">Vital<span>Metais</span></div>
+        <p class="ft-desc">Soluções sustentáveis em reciclagem de metais. Logística reversa, compra e venda de metais ferrosos e não ferrosos com compromisso ambiental com a indústria brasileira.</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/vitalmetais/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/vitalmetais/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-title">Links Rápidos</div>
+        <div class="ft-links">
+          <a href="#sobre">Quem somos</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#lme">Mercado LME</a>
+          <a href="#logistica">Logística Reversa</a>
+          <a href="#atuacao">Áreas de atuação</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-title">Contato</div>
+        <div class="ft-cts">
+          <a class="ft-ct" href="https://maps.app.goo.gl/PDn9nFV3Gbr4EM3k8" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-map-location-dot"></i>
+            <span><b>Matriz:</b> Alameda Caiapós, 680 — Barueri - SP</span>
+          </a>
+          <a class="ft-ct" href="https://maps.app.goo.gl/dCZSJoDkv4NJr78c7" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-map-location-dot"></i>
+            <span><b>Filial:</b> Rua dos Sentinelas, 180 — Carapicuíba - SP</span>
+          </a>
+          <a class="ft-ct" href="mailto:comercial@vitalmetais.com.br">
+            <i class="fas fa-envelope"></i> comercial@vitalmetais.com.br
+          </a>
+          <a class="ft-ct" href="tel:551141462057">
+            <i class="fas fa-phone"></i> (11) 4146-2057
+          </a>
+          <a class="ft-ct" href="https://api.whatsapp.com/send?phone=5511977164468" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i> (11) 97716-4468
+          </a>
+          <a class="ft-ct" href="https://api.whatsapp.com/send?phone=5511993950942" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i> (11) 99395-0942
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fb">
+      <span>Vital Metais © 2026 — Todos os Direitos Reservados</span>
+      <span>Desenvolvido por Grigor</span>
+    </div>
+  </footer>
+
+</div><!-- /page-main -->
+
+
+<!-- ════════════════════════════════════════════
+     PÁGINA EMPRESA — SLIDES
+════════════════════════════════════════════ -->
+<div id="page-empresa">
+
+  <div class="emp-nav">
+    <button class="btn-back" onclick="voltarHome()">
+      <i class="fas fa-arrow-left"></i> Voltar ao site
+    </button>
+    <div class="logo-txt">Vital<span>Metais</span></div>
+    <div class="slide-ctr">Slide <b id="snum">1</b> / 8</div>
+  </div>
+
+  <div class="slides-wrap">
+
+    <!-- SLIDE 1: CAPA — logo fundo branco (igual ao PDF) -->
+    <div class="slide s1 active" id="sl-1">
+      <div class="slide-bg" style="background:#ffffff;">
+        <img src="img logo/logovital.jpg" alt="Vital Metais"
+             style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:55%;max-height:55%;width:auto;height:auto;object-fit:contain;"
+             onerror="this.style.display='none'">
+      </div>
+      <div class="slide-overlay-dark" style="background:transparent;"></div>
+      <div class="s1-center" style="display:none;"></div>
+    </div>
+
+    <!-- SLIDE 2: ESPECIALISTA — fundo preto com faixa verde (igual ao PDF) -->
+    <div class="slide s2" id="sl-2">
+      <div>
+        <span class="s2-tag">ESPECIALISTA</span>
+        <h2>METAIS NÃO <span>FERROSOS</span></h2>
+        <p>Vital Metais: Inteligência em Logística e Processamento de Materiais Nobres.</p>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: CORE BUSINESS (igual ao PDF) -->
+    <div class="slide s3" id="sl-3">
+      <h2>NOSSO CORE BUSINESS</h2>
+      <div class="s3-grid">
+        <div>
+          <p>Diferente das sucatas comuns, os <strong>metais não ferrosos</strong> exigem uma triagem técnica rigorosa e análise de pureza para garantir o valor de mercado.</p>
+          <p>Na Vital Metais, focamos exclusivamente em materiais com alta condutividade, resistência à corrosão e propriedades não magnéticas, atendendo aos padrões da <strong>London Metal Exchange (LME)</strong>.</p>
+        </div>
+        <div class="metals">
+          <div class="metal"><span class="m-sym">Cu</span><span class="m-nm">Cobre</span></div>
+          <div class="metal"><span class="m-sym">Al</span><span class="m-nm">Alumínio</span></div>
+          <div class="metal"><span class="m-sym">Zn</span><span class="m-nm">Zinco</span></div>
+          <div class="metal"><span class="m-sym">Sn</span><span class="m-nm">Estanho</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: MATERIAIS PROCESSADOS (igual ao PDF) -->
+    <div class="slide s4" id="sl-4">
+      <h2>PRINCIPAIS MATERIAIS PROCESSADOS</h2>
+      <table class="mat-tbl">
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>Especificações Atendidas</th>
+            <th>Aplicações Industriais</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Cobre Mel e Misto</td><td>Cabos, Fios e Motores</td><td>Elétrica e Eletrônica</td></tr>
+          <tr><td>Alumínio</td><td>Perfis, Chaparias e Offset</td><td>Indústria Automotiva e Construção</td></tr>
+          <tr><td>Bronze e Latão</td><td>Mancais, Engrenagens e Peças Usinadas</td><td>Mecânica de Precisão</td></tr>
+          <tr><td>Ligas Especiais</td><td>Zinco, Estanho e Chumbo</td><td>Galvanoplastia e Metalurgia</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SLIDE 5: UNIDADE I — coloque foto em: Img geral/matriz.jpg -->
+    <div class="slide s5" id="sl-5">
+      <h2>UNIDADE I: MATRIZ (TAMBORÉ)</h2>
+      <div class="und-grid">
+        <div class="und-img">
+          <img src="Img geral/matriz.jpg" alt="Matriz Tamboré"
+               onerror="this.parentElement.classList.add('und-fallback');this.remove()">
+        </div>
+        <div>
+          <span class="und-tag">Centro de Excelência</span>
+          <span class="und-addr">
+            <i class="fas fa-map-location-dot" style="color:var(--green)"></i>
+            Al. Caiapós, 680 — Barueri/SP
+          </span>
+          <p class="und-desc">Nossa sede principal é equipada com balanças de precisão e tecnologia para descaracterização de componentes eletrônicos, garantindo a recuperação total dos metais nobres contidos em equipamentos de TI.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: UNIDADE II — coloque foto em: Img geral/carapicuiba.jpg -->
+    <div class="slide s6" id="sl-6">
+      <h2>UNIDADE II: APOIO (CARAPICUÍBA)</h2>
+      <div class="und-grid">
+        <div class="und-img">
+          <img src="Img geral/carapicuiba.jpg" alt="Filial Carapicuíba"
+               onerror="this.parentElement.classList.add('und-fallback');this.remove()">
+        </div>
+        <div>
+          <span class="und-tag">Agilidade Logística</span>
+          <span class="und-addr">
+            <i class="fas fa-map-location-dot" style="color:var(--green)"></i>
+            Rua dos Sentinelas, 180 — Carapicuíba/SP
+          </span>
+          <p class="und-desc">Unidade estratégica focada na captação regional e logística reversa ágil. Especializada na triagem inicial de sucatas de alumínio e cobre provenientes de setores de manutenção e serviços.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: POR QUE VITAL — fundo verde (igual ao PDF) -->
+    <div class="slide s7" id="sl-7">
+      <h2>Por que escolher a Vital?</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="why-ic"><i class="fas fa-chart-line"></i></span>
+          <h3>Preço LME</h3>
+          <p>Pagamento justo baseado em cotações internacionais atualizadas.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-ic"><i class="fas fa-leaf"></i></span>
+          <h3>Sustentabilidade</h3>
+          <p>Certificação de destino ambiental para metais não ferrosos.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-ic"><i class="fas fa-truck"></i></span>
+          <h3>Coleta Técnica</h3>
+          <p>Frota própria preparada para retirada segura e imediata.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: CONTATO FINAL — fundo preto com logo (igual ao PDF) -->
+    <div class="slide s8" id="sl-8">
+      <div class="s8-box">
+        <img src="img logo/logovital.jpg" alt="Vital Metais"
+             style="width:220px;height:auto;object-fit:contain;display:block;"
+             onerror="this.style.display='none';document.getElementById('s8-fallback').style.display='block'">
+        <div id="s8-fallback" style="display:none;">
+          <div class="s8-brand">VITAL<span>♻</span></div>
+          <span class="s8-sub">METAIS</span>
+        </div>
+      </div>
+      <p class="tgl">Sua solução definitiva em Metais Não Ferrosos.</p>
+      <div class="s8-div"></div>
+      <div class="s8-cts">
+        <div>
+          <div class="s8-gtitle">COMERCIAL</div>
+          <p>(11) 4146-2057<br>(11) 97716-4468</p>
+        </div>
+        <div>
+          <div class="s8-gtitle">DIGITAL</div>
+          <p>comercial@vitalmetais.com.br<br>www.vitalmetais.com.br</p>
+        </div>
+      </div>
+      <div style="margin-top:40px;">
+        <button class="btn-hero" onclick="voltarHome()">
+          <i class="fas fa-arrow-left"></i> Voltar ao site
+        </button>
+      </div>
+    </div>
+
+  </div><!-- /slides-wrap -->
+
+  <div class="slide-nav">
+    <button id="btnPrev" onclick="prevSlide()" disabled>
+      <i class="fas fa-arrow-left"></i> Anterior
+    </button>
+    <div class="dots" id="dots"></div>
+    <button id="btnNext" onclick="nextSlide()">
+      Próximo <i class="fas fa-arrow-right"></i>
+    </button>
+  </div>
+
+</div><!-- /page-empresa -->
+
+<!-- WHATSAPP FLUTUANTE -->
+<div class="wf">
+  <a href="https://api.whatsapp.com/send?phone=5511977164468" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <i class="fas fa-check-circle"></i> Mensagem enviada! Entraremos em contato em breve.
+</div>
+
+<script src="script.js"></script>
+<div class="gtranslate_wrapper"></div>
+<script>
+  window.gtranslateSettings = {
+    "default_language": "pt", 
+    /*(Japonês) ao final da lista */
+    "languages": ["pt", "en", "es", "zh-CN", "ja"], 
+    "wrapper_selector": ".gtranslate_wrapper",
+    "position": "bottom_left", 
+    "flag_style": "2d",
+    "alt_flags": {"pt": "brazil"}
+  }
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+</body>
+</html>
