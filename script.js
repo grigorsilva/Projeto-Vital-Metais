@@ -1,85 +1,8 @@
 /* ═══════════════════════════════════
-   VITAL METAIS — script.js
+   VITAL METAIS — script.js (Produção)
 ═══════════════════════════════════ */
 
-/* ══════════════════════════════
-   SLIDES — PÁGINA EMPRESA
-══════════════════════════════ */
-const TOTAL_SLIDES = 8;
-let curSlide = 1;
-
-function initDots() {
-  const dotsEl = document.getElementById('dots');
-  if (!dotsEl) return;
-  dotsEl.innerHTML = '';
-  for (let i = 1; i <= TOTAL_SLIDES; i++) {
-    const d = document.createElement('button');
-    d.className = 'dot' + (i === 1 ? ' active' : '');
-    d.setAttribute('aria-label', 'Slide ' + i);
-    d.onclick = () => goSlide(i);
-    dotsEl.appendChild(d);
-  }
-}
-
-function goSlide(n) {
-  // 1. Limpa TODOS os slides primeiro (Garante que nenhum fica encravado na frente)
-  for (let i = 1; i <= TOTAL_SLIDES; i++) {
-    const slide = document.getElementById('sl-' + i);
-    if (slide) {
-      slide.classList.remove('active');
-    }
-  }
-  
-  // Limpa também todas as bolinhas
-  const dotsEl = document.getElementById('dots');
-  if (dotsEl) {
-    Array.from(dotsEl.children).forEach(dot => dot.classList.remove('active'));
-  }
-
-  // 2. Atualiza o número do slide atual
-  curSlide = n;
-
-  // 3. Ativa EXATAMENTE o slide pedido e traz para a frente
-  const nextSlide = document.getElementById('sl-' + curSlide);
-  if (nextSlide) {
-    nextSlide.classList.add('active');
-  }
-
-  // 4. Pinta a bolinha correta
-  if (dotsEl && dotsEl.children[curSlide - 1]) {
-    dotsEl.children[curSlide - 1].classList.add('active');
-  }
-
-  // 5. Bloqueia/Desbloqueia os botões Anterior e Próximo
-  const btnP = document.getElementById('btnPrev');
-  const btnN = document.getElementById('btnNext');
-  if (btnP) btnP.disabled = (curSlide === 1);
-  if (btnN) btnN.disabled = (curSlide === TOTAL_SLIDES);
-}
-
-function nextSlide() { if (curSlide < TOTAL_SLIDES) goSlide(curSlide + 1); }
-function prevSlide() { if (curSlide > 1) goSlide(curSlide - 1); }
-
-
-
-/* ══════════════════════════════
-   PAGE TRANSITION
-══════════════════════════════ */
-function abrirEmpresa() {
-  goSlide(1);
-  document.getElementById('page-empresa').classList.add('visible');
-  document.getElementById('page-main').classList.add('hidden');
-  document.getElementById('page-empresa').scrollTo({ top: 0, behavior: 'instant' });
-}
-
-function voltarHome() {
-  document.getElementById('page-empresa').classList.remove('visible');
-  document.getElementById('page-main').classList.remove('hidden');
-}
-
-/* ══════════════════════════════
-   CARROSSEL "SOBRE NÓS"
-══════════════════════════════ */
+/* ================== CARROSSEL "SOBRE NÓS" ================== */
 let acCur = 0;
 let acTotal = 0;
 let acTimer = null;
@@ -132,9 +55,7 @@ function acReset() {
   acStart();
 }
 
-/* ══════════════════════════════
-   TABS LOGÍSTICA
-══════════════════════════════ */
+/* ================== TABS LOGÍSTICA ================== */
 function st(idx, el) {
   document.querySelectorAll('.tbtn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.tc').forEach(c => c.classList.remove('active'));
@@ -142,123 +63,57 @@ function st(idx, el) {
   document.querySelectorAll('.tc')[idx].classList.add('active');
 }
 
-/* ══════════════════════════════
-   CERTIFICAÇÕES — TOGGLE COR
-══════════════════════════════ */
+/* ================== CERTIFICAÇÕES ================== */
 function toggleCert(el) {
   const wasActive = el.classList.contains('active');
   document.querySelectorAll('.cert-item').forEach(c => c.classList.remove('active'));
   if (!wasActive) el.classList.add('active');
 }
 
-/* ══════════════════════════════
-   FORMULÁRIO DE CONTATO
-══════════════════════════════ */
-function submitForm() {
+/* ================== FORMULÁRIO DE CONTATO (API) ================== */
+async function submitForm() {
   const required = ['fn', 'fem', 'fe', 'fm'];
   if (required.some(id => !document.getElementById(id).value.trim())) {
     alert('Preencha os campos obrigatórios: Nome, E-mail, Empresa e Material.');
     return;
   }
-  const toast = document.getElementById('toast');
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 4000);
-  ['fn', 'fe', 'fem', 'ft', 'fmsg'].forEach(id => {
-    document.getElementById(id).value = '';
-  });
-  document.getElementById('fm').selectedIndex = 0;
-}
 
-/* ══════════════════════════════
-   MERCADO LME — YAHOO FINANCE
-══════════════════════════════ */
+  const btn = document.querySelector('.btn-sub');
+  if (btn) { btn.disabled = true; btn.textContent = 'Enviando...'; }
 
-/*
-  Símbolos Yahoo Finance usados:
-  ALI=F  → Alumínio Futuro (USD/lb × 2204.62 = USD/t)
-  HG=F   → Cobre Futuro   (USD/lb × 2204.62 = USD/t)
-  PB=F   → Chumbo         (USD/t direto via LME ticker)
-  ZNC=F  → Zinco Futuro   (USD/t)
-  SN=F   → Estanho        (USD/t via LME)
-  NI=F   → Níquel Futuro  (USD/t)
-  BRL=X  → USD/BRL câmbio
+  const payload = {
+    nome:     document.getElementById('fn').value.trim(),
+    empresa:  document.getElementById('fe').value.trim(),
+    email:    document.getElementById('fem').value.trim(),
+    telefone: document.getElementById('ft').value.trim(),
+    material: document.getElementById('fm').value,
+    mensagem: document.getElementById('fmsg').value.trim(),
+  };
 
-  Usamos o proxy público allorigins.win para contornar CORS.
-  Em produção, recomenda-se um backend próprio ou a API paga do Yahoo Finance.
-*/
+  try {
+    const res  = await fetch('enviar.php', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload),
+    });
+    const data = await res.json();
 
-const YAHOO_METALS = [
-  { id: 'al',  ticker: 'ALI=F',  label: 'Alumínio', unit: 'USD/t',  factor: 2204.62 },
-  { id: 'cu',  ticker: 'HG=F',   label: 'Cobre',    unit: 'USD/t',  factor: 2204.62 },
-  { id: 'pb',  ticker: 'PB=F',   label: 'Chumbo',   unit: 'USD/t',  factor: 1       },
-  { id: 'zn',  ticker: 'ZNC=F',  label: 'Zinco',    unit: 'USD/t',  factor: 1       },
-  { id: 'sn',  ticker: 'SN=F',   label: 'Estanho',  unit: 'USD/t',  factor: 1       },
-  { id: 'ni',  ticker: 'NI=F',   label: 'Níquel',   unit: 'USD/t',  factor: 1       },
-  { id: 'usd', ticker: 'BRL=X',  label: 'Dólar',    unit: 'BRL',    factor: 1       },
-];
-
-const PROXY = 'https://api.allorigins.win/get?url=';
-
-async function fetchYahoo(ticker) {
-  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${ticker}?interval=1d&range=2d`;
-  const res = await fetch(PROXY + encodeURIComponent(url), { signal: AbortSignal.timeout(8000) });
-  const wrap = await res.json();
-  const data = JSON.parse(wrap.contents);
-  const meta = data.chart.result[0].meta;
-  const price = meta.regularMarketPrice;
-  const prev  = meta.chartPreviousClose || meta.previousClose || price;
-  return { price, prev };
-}
-
-async function loadLME() {
-  /* Atualiza timestamp */
-  const tsEl = document.getElementById('lme-timestamp');
-  if (tsEl) {
-    const now = new Date();
-    tsEl.textContent = 'Atualizado: ' + now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
-  }
-
-  for (const m of YAHOO_METALS) {
-    try {
-      const { price, prev } = await fetchYahoo(m.ticker);
-      const realPrice = price * m.factor;
-      const realPrev  = prev  * m.factor;
-      const decimals  = m.id === 'usd' ? 4 : 0;
-      renderCard(m.id, realPrice, realPrev, decimals);
-    } catch {
-      /* fallback: mostra último valor conhecido */
-      const fallbacks = { al: 2480, cu: 9640, pb: 2010, zn: 2750, sn: 28500, ni: 16800, usd: 5.68 };
-      const decimals  = m.id === 'usd' ? 4 : 0;
-      renderCard(m.id, fallbacks[m.id], fallbacks[m.id], decimals, true);
+    if (data.ok) {
+      const toast = document.getElementById('toast');
+      if (toast) { toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 4500); }
+      ['fn', 'fe', 'fem', 'ft', 'fmsg'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('fm').selectedIndex = 0;
+    } else {
+      alert('Erro: ' + data.msg);
     }
+  } catch {
+    alert('Não foi possível enviar. Verifique sua conexão ou ligue para (11) 4146-2057.');
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = 'Enviar Mensagem'; }
   }
 }
 
-function renderCard(id, price, prev, decimals, isOffline = false) {
-  const valEl = document.getElementById('lv-'   + id);
-  const chgEl = document.getElementById('lchg-' + id);
-  if (!valEl || !chgEl) return;
-
-  const fmt  = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
-  valEl.textContent = fmt.format(price);
-
-  if (isOffline) {
-    chgEl.textContent = '—';
-    chgEl.className = 'lme-chg';
-    return;
-  }
-
-  const diff = price - prev;
-  const pct  = ((diff / prev) * 100).toFixed(2);
-  const sign = diff >= 0 ? '+' : '';
-  const arrow = diff >= 0 ? ' ▲' : ' ▼';
-  chgEl.textContent = sign + pct + '%' + arrow;
-  chgEl.className   = 'lme-chg ' + (diff >= 0 ? 'up' : 'down');
-}
-
-/* ══════════════════════════════
-   SMOOTH SCROLL
-══════════════════════════════ */
+/* ================== SCROLL SUAVE ================== */
 function initSmoothScroll() {
   document.querySelectorAll('#page-main a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
@@ -266,7 +121,7 @@ function initSmoothScroll() {
       if (href === '#') return;
       e.preventDefault();
       if (href === '#top') {
-        document.getElementById('page-main').scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
       const target = document.querySelector(href);
@@ -275,20 +130,12 @@ function initSmoothScroll() {
   });
 }
 
-/* ══════════════════════════════
-   INIT
-══════════════════════════════ */
+/* ================== INICIALIZAÇÃO UNIFICADA ================== */
 document.addEventListener('DOMContentLoaded', () => {
-  initDots();
   initCarousel();
   initSmoothScroll();
-  loadLME();
-})
 
-/* ══════════════════════════════
-   MENU HAMBÚRGUER (MOBILE)
-══════════════════════════════ */
-document.addEventListener('DOMContentLoaded', () => {
+  // Menu Hambúrguer (Mobile)
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('.main-nav');
 
@@ -315,9 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-});
 
-document.addEventListener('DOMContentLoaded', function () {
+  // Glide.js (Produtos)
   if (document.querySelector('#glide-produtos')) {
     new Glide('#glide-produtos', {
       type: 'carousel',
@@ -331,7 +177,27 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }).mount();
   }
-  
 });
 
-/* ── MODO ESCURO / CLARO (THEME TOGGLE) ── */
+
+/* ================== POP-UP INTENÇÃO DE SAÍDA ================== */
+document.addEventListener('DOMContentLoaded', () => {
+  let popupMostrado = false;
+  
+  document.addEventListener('mouseout', (e) => {
+    if (e.clientY <= 0 && !popupMostrado) {
+      const popup = document.getElementById('popup-saida');
+      if (popup) {
+        popup.classList.add('ativo');
+        popupMostrado = true; 
+      }
+    }
+  });
+});
+
+function fecharPopupSaida() {
+  const popup = document.getElementById('popup-saida');
+  if (popup) {
+    popup.classList.remove('ativo');
+  }
+}
