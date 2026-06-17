@@ -241,7 +241,7 @@ h2.ttl{font-size:clamp(28px,3.5vw,44px);font-weight:800;color:var(--black);line-
 /* ================== MERCADO LME (SHOCK METAIS) ================== */
 .janela-lme {
   width: 100%;
-  height: 800px; /* Tamanho da caixa visível no site */
+  height: 500px; /* Tamanho da caixa visível no site */
   border-radius: 12px;
   overflow: hidden; /* CORTA TUDO FORA DA CAIXA (Corrigido) */
   border: 3px solid var(--green);
